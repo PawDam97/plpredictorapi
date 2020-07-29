@@ -5,6 +5,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "table2015_16")
 public class TableOne {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer Id;
     @Column(name = "Position")
     private Integer Position;
     @Column(name = "ClubName")
@@ -42,7 +46,8 @@ public class TableOne {
 
     }
 
-    public TableOne(Integer position, String clubName, Float wins, Float draws, Float losses, Float goalsScored, Float goalsLost, Float goalsDifference, Float goalsScoredHome, Float goalsLostHome, Float goalsScoredAway, Float goalsLostAway, Float yellowCards, Float redCards, Float points, String league) {
+    public TableOne(Integer id,Integer position, String clubName, Float wins, Float draws, Float losses, Float goalsScored, Float goalsLost, Float goalsDifference, Float goalsScoredHome, Float goalsLostHome, Float goalsScoredAway, Float goalsLostAway, Float yellowCards, Float redCards, Float points, String league) {
+        this.Id = id;
         this.Position = position;
         this.ClubName = clubName;
         this.Wins = wins;
@@ -61,8 +66,16 @@ public class TableOne {
         this.League = league;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
     public Integer getPosition() {
         return Position;
     }

@@ -19,11 +19,11 @@ public List<TableOne> listAll() {
 public void save(TableOne tableOne){
     tableOneRepo.save(tableOne);
 }
-public TableOne get(Integer Position){
-return  tableOneRepo.findById(Position).get();
+public TableOne get(Integer Id){
+return  tableOneRepo.findById(Id).get();
 }
-public void delete(Integer Position){
-    tableOneRepo.deleteById(Position);
+public void delete(Integer Id){
+    tableOneRepo.deleteById(Id);
 }
 
 }
