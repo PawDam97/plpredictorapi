@@ -5,21 +5,37 @@ import javax.persistence.*;
 @Entity
 @Table(name = "table2015_16")
 public class TableOne {
+    @Column(name = "Position")
     private Integer Position;
+    @Column(name = "ClubName")
     private String ClubName;
+    @Column(name = "Wins")
     private Float Wins;
+    @Column(name = "Draws")
     private Float Draws;
+    @Column(name = "Losses")
     private Float Losses;
+    @Column(name = "GoalsScored")
     private Float GoalsScored;
+    @Column(name = "GoalsLost")
     private Float GoalsLost;
+    @Column(name = "GoalsDifference")
     private Float GoalsDifference;
+    @Column(name = "GoalsScoredHome")
     private Float GoalsScoredHome;
+    @Column(name = "GoalsLostHome")
     private Float GoalsLostHome;
+    @Column(name = "GoalsScoredAway")
     private Float GoalsScoredAway;
+    @Column(name = "GoalsLostAway")
     private Float GoalsLostAway;
+    @Column(name = "YellowCards")
     private Float YellowCards;
+    @Column(name = "RedCards")
     private Float RedCards;
+    @Column(name = "Points")
     private Float Points;
+    @Column(name = "League")
     private String League;
 
     public TableOne(){
