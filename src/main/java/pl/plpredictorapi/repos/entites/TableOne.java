@@ -3,7 +3,7 @@ package pl.plpredictorapi.repos.entites;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "table2015/16")
+@Table(name = "table2015_16")
 public class TableOne {
     private Integer Position;
     private String ClubName;
