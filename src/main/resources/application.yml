@@ -3,3 +3,6 @@ spring:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/plpredictions?serverTimezone=UTC&useLegacyDatetimeCode=false
     username: root
     password: root
+  jpa:
+    hibernate:
+      naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
