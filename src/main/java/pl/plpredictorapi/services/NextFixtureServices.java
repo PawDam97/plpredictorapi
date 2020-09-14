@@ -38,7 +38,7 @@ public class NextFixtureServices {
         ResponseEntity<NextFixturesTable> exchange =
                 template.exchange("https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2790/next/10", HttpMethod.GET, entity,
                         NextFixturesTable.class);
-        List<Fixture> fixtureTable = exchange.getBody().getApi().getFixtures().get(0);
+        List<Fixture> fixtureTable = exchange.getBody().getApi().getFixtures();
 
         for (Fixture fixtures : fixtureTable) {
             NextFixture tl;

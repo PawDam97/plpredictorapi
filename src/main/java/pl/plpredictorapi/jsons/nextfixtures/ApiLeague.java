@@ -17,7 +17,7 @@ public class ApiLeague {
     @JsonProperty("results")
     private Integer results;
     @JsonProperty("fixtures")
-    private List<List<Fixture>> fixtures = null;
+    private List<Fixture> fixtures = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -28,10 +28,10 @@ public class ApiLeague {
     public void setResults(Integer results) { this.results = results; }
 
     @JsonProperty("fixtures")
-    public List<List<Fixture>> getFixtures() { return fixtures; }
+    public List<Fixture> getFixtures() { return fixtures; }
 
     @JsonProperty("fixtures")
-    public void setFixtures(List<List<Fixture>> fixtures) { this.fixtures = fixtures; }
+    public void setFixtures(List<Fixture> fixtures) { this.fixtures = fixtures; }
 
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() { return additionalProperties; }
