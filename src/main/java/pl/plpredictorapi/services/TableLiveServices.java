@@ -39,6 +39,11 @@ private TableLiveRepository tableLiveRepository;
 					    PremieshipTable.class);
 	    List<Standing> leagueTable = exchange.getBody().getApi().getStandings().get(0);
 
+	    Float ligueAvgGoalScoredHome = getLigueAvgGoalsScoredHome(leagueTable);
+	    Float ligueAvgGoalScoredAway = getLigueAvgGoalsScoredAway(leagueTable);
+	    Float ligueAvgGoalLostHome = getLigueAvgGoalsLostHome(leagueTable);
+	    Float ligueAvgGoalLostAway = getLigueAvgGoalsLostAway(leagueTable);
+
 	    for(Standing standing : leagueTable){
 		    TableLive tl;
 		    List<TableLive> existing = tableLiveRepository.getByName(standing.getTeamName());
@@ -64,7 +69,12 @@ private TableLiveRepository tableLiveRepository;
 		    tl.setLeague(standing.getGroup());
 		    tl.setMatchesPlayedHome(standing.getHome().getMatchsPlayed().floatValue());
 		    tl.setMatchesPlayedAway(standing.getAway().getMatchsPlayed().floatValue());
+		    tl.setLigueAvgGoalsScoredHome(ligueAvgGoalScoredHome);
+		    tl.setLigueAvgGoalsScoredAway(ligueAvgGoalScoredAway);
+		    tl.setLigueAvgGoalsLostHome(ligueAvgGoalLostHome);
+		    tl.setLigueAvgGoalsLostAway(ligueAvgGoalLostAway);
 
+		    System.out.println(tl.toString());
 
 		    tableLiveRepository.save(tl);
 	    }
@@ -82,4 +92,44 @@ private TableLiveRepository tableLiveRepository;
 	    */
 
     }
+
+    private Float getLigueAvgGoalsScoredHome(List<Standing> standings){
+    	Float allgoals = 0f;
+    	Float allMatch = 0f;
+    	for(Standing standing : standings){
+		    allgoals += standing.getHome().getGoalsFor();
+		    allMatch += standing.getHome().getMatchsPlayed();
+	    }
+    	return allgoals/allMatch;
+    }
+
+	private Float getLigueAvgGoalsScoredAway(List<Standing> standings){
+		Float allgoals = 0f;
+		Float allMatch = 0f;
+		for(Standing standing : standings){
+			allgoals += standing.getAway().getGoalsFor();
+			allMatch += standing.getAway().getMatchsPlayed();
+		}
+		return allgoals/allMatch;
+	}
+
+	private Float getLigueAvgGoalsLostHome(List<Standing> standings){
+		Float allgoals = 0f;
+		Float allMatch = 0f;
+		for(Standing standing : standings){
+			allgoals += standing.getHome().getGoalsAgainst();
+			allMatch += standing.getHome().getMatchsPlayed();
+		}
+		return allgoals/allMatch;
+	}
+
+	private Float getLigueAvgGoalsLostAway(List<Standing> standings){
+		Float allgoals = 0f;
+		Float allMatch = 0f;
+		for(Standing standing : standings){
+			allgoals += standing.getAway().getGoalsAgainst();
+			allMatch += standing.getAway().getMatchsPlayed();
+		}
+		return allgoals/allMatch;
+	}
 }

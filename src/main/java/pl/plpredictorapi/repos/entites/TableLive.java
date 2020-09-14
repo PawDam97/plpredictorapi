@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import java.net.http.HttpResponse;
 
+
 @Entity
 @Table(name = "table2020_21")
 public class TableLive {
@@ -30,6 +31,42 @@ public class TableLive {
     private String League;
 	private Float MatchesPlayedHome;
 	private Float MatchesPlayedAway;
+
+	private Float LigueAvgGoalsScoredHome;
+	private Float LigueAvgGoalsScoredAway;
+	private Float LigueAvgGoalsLostHome;
+	private Float LigueAvgGoalsLostAway;
+
+
+
+	public Float calculateOffHome(){
+		if(MatchesPlayedHome == 0) { //poniewaz nie można dzielić przez 0
+			return 0f;
+		}
+		return (GoalsScoredHome/MatchesPlayedHome) / LigueAvgGoalsScoredHome;
+	}
+
+	public Float calculateOffAway(){
+		if(MatchesPlayedAway == 0) {
+			return 0f;
+		}
+		return (GoalsScoredAway/MatchesPlayedAway) / LigueAvgGoalsScoredAway;
+	}
+
+	public Float calculateDeffHome(){
+		if(MatchesPlayedHome == 0) {
+			return 0f;
+		}
+		return (GoalsLostHome/MatchesPlayedHome) / LigueAvgGoalsLostHome;
+	}
+
+	public Float calculateDeffAway(){
+		if(MatchesPlayedAway == 0) {
+			return 0f;
+		}
+		return (GoalsLostAway/MatchesPlayedAway) / LigueAvgGoalsLostAway;
+	}
+
 
 	public Integer getApiId() { return ApiId; }
 
@@ -165,4 +202,63 @@ public class TableLive {
 
 	public TableLive(){}
 
+	public Float getLigueAvgGoalsScoredHome() {
+		return LigueAvgGoalsScoredHome;
+	}
+
+	public void setLigueAvgGoalsScoredHome(Float ligueAvgGoalsScoredHome) {
+		LigueAvgGoalsScoredHome = ligueAvgGoalsScoredHome;
+	}
+
+	public Float getLigueAvgGoalsScoredAway() {
+		return LigueAvgGoalsScoredAway;
+	}
+
+	public void setLigueAvgGoalsScoredAway(Float ligueAvgGoalsScoredAway) {
+		LigueAvgGoalsScoredAway = ligueAvgGoalsScoredAway;
+	}
+
+	public Float getLigueAvgGoalsLostHome() {
+		return LigueAvgGoalsLostHome;
+	}
+
+	public void setLigueAvgGoalsLostHome(Float ligueAvgGoalsLostHome) {
+		LigueAvgGoalsLostHome = ligueAvgGoalsLostHome;
+	}
+
+	public Float getLigueAvgGoalsLostAway() {
+		return LigueAvgGoalsLostAway;
+	}
+
+	public void setLigueAvgGoalsLostAway(Float ligueAvgGoalsLostAway) {
+		LigueAvgGoalsLostAway = ligueAvgGoalsLostAway;
+	}
+
+	@Override
+	public String toString() {
+		return "TableLive{" +
+				"Id=" + Id +
+				", ApiId=" + ApiId +
+				", Position=" + Position +
+				", ClubName='" + ClubName + '\'' +
+				", Wins=" + Wins +
+				", Draws=" + Draws +
+				", Losses=" + Losses +
+				", GoalsScored=" + GoalsScored +
+				", GoalsLost=" + GoalsLost +
+				", GoalsDifference=" + GoalsDifference +
+				", GoalsScoredHome=" + GoalsScoredHome +
+				", GoalsLostHome=" + GoalsLostHome +
+				", GoalsScoredAway=" + GoalsScoredAway +
+				", GoalsLostAway=" + GoalsLostAway +
+				", Points=" + Points +
+				", League='" + League + '\'' +
+				", MatchesPlayedHome=" + MatchesPlayedHome +
+				", MatchesPlayedAway=" + MatchesPlayedAway +
+				", LigueAvgGoalsScoredHome=" + LigueAvgGoalsScoredHome +
+				", LigueAvgGoalsScoredAway=" + LigueAvgGoalsScoredAway +
+				", LigueAvgGoalsLostHome=" + LigueAvgGoalsLostHome +
+				", LigueAvgGoalsLostAway=" + LigueAvgGoalsLostAway +
+				'}';
+	}
 }
