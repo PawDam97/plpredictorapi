@@ -52,6 +52,7 @@ private TableLiveRepository tableLiveRepository;
 		    }else{
 		    	tl = new TableLive();
 		    }
+
 			tl.setApiId(standing.getTeamId());
 		    tl.setClubName(standing.getTeamName());
 		    tl.setPosition(standing.getRank());
@@ -73,6 +74,7 @@ private TableLiveRepository tableLiveRepository;
 		    tl.setLigueAvgGoalsScoredAway(ligueAvgGoalScoredAway);
 		    tl.setLigueAvgGoalsLostHome(ligueAvgGoalLostHome);
 		    tl.setLigueAvgGoalsLostAway(ligueAvgGoalLostAway);
+
 
 		    System.out.println(tl.toString());
 

@@ -37,34 +37,39 @@ public class TableLive {
 	private Float LigueAvgGoalsLostHome;
 	private Float LigueAvgGoalsLostAway;
 
+	private Float OffHome;
+	private Float DeffHome;
+	private Float OffAway;
+	private Float DeffAway;
+
 
 
 	public Float calculateOffHome(){
 		if(MatchesPlayedHome == 0) { //poniewaz nie można dzielić przez 0
-			return 0f;
+			return	OffHome = 0f;
 		}
-		return (GoalsScoredHome/MatchesPlayedHome) / LigueAvgGoalsScoredHome;
+		return	OffHome = (GoalsScoredHome/MatchesPlayedHome) / LigueAvgGoalsScoredHome;
 	}
 
 	public Float calculateOffAway(){
 		if(MatchesPlayedAway == 0) {
-			return 0f;
+			return	OffAway = 0f;
 		}
-		return (GoalsScoredAway/MatchesPlayedAway) / LigueAvgGoalsScoredAway;
+		return OffAway = (GoalsScoredAway/MatchesPlayedAway) / LigueAvgGoalsScoredAway;
 	}
 
 	public Float calculateDeffHome(){
 		if(MatchesPlayedHome == 0) {
-			return 0f;
+			return	DeffHome = 0f;
 		}
-		return (GoalsLostHome/MatchesPlayedHome) / LigueAvgGoalsLostHome;
+		return DeffHome = (GoalsLostHome/MatchesPlayedHome) / LigueAvgGoalsLostHome;
 	}
 
 	public Float calculateDeffAway(){
 		if(MatchesPlayedAway == 0) {
-			return 0f;
+			return	DeffAway = 0f;
 		}
-		return (GoalsLostAway/MatchesPlayedAway) / LigueAvgGoalsLostAway;
+		return DeffAway = (GoalsLostAway/MatchesPlayedAway) / LigueAvgGoalsLostAway;
 	}
 
 
@@ -234,6 +239,22 @@ public class TableLive {
 		LigueAvgGoalsLostAway = ligueAvgGoalsLostAway;
 	}
 
+	public Float getOffHome() { return OffHome; }
+
+	public void setOffHome(Float offHome) { OffHome = offHome; }
+
+	public Float getDeffHome() { return DeffHome; }
+
+	public void setDeffHome(Float deffHome) { DeffHome = deffHome; }
+
+	public Float getOffAway() { return OffAway; }
+
+	public void setOffAway(Float offAway) { OffAway = offAway; }
+
+	public Float getDeffAway() { return DeffAway; }
+
+	public void setDeffAway(Float deffAway) { DeffAway = deffAway; }
+
 	@Override
 	public String toString() {
 		return "TableLive{" +
@@ -259,6 +280,10 @@ public class TableLive {
 				", LigueAvgGoalsScoredAway=" + LigueAvgGoalsScoredAway +
 				", LigueAvgGoalsLostHome=" + LigueAvgGoalsLostHome +
 				", LigueAvgGoalsLostAway=" + LigueAvgGoalsLostAway +
+				", OffHome=" + OffHome +
+				", DeffHome=" + DeffHome +
+				", OffAway=" + OffAway +
+				", DeffAway=" + DeffAway +
 				'}';
 	}
 }
