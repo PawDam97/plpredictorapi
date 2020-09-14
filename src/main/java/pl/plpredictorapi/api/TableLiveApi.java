@@ -19,4 +19,9 @@ public class TableLiveApi {
     public Iterable<TableLive> list(){
         return tableLiveServices.list();
     }
+
+    @GetMapping("/save")
+	public void savePremiershipTable(){
+    	tableLiveServices.savePremiershipTable();
+    }
 }
