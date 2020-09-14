@@ -44,32 +44,32 @@ public class TableLive {
 
 
 
-	public Float calculateOffHome(){
+	public void calculateOffHome(){
 		if(MatchesPlayedHome == 0) { //poniewaz nie można dzielić przez 0
-			return	OffHome = 0f;
+			OffHome = 0f;
 		}
-		return	OffHome = (GoalsScoredHome/MatchesPlayedHome) / LigueAvgGoalsScoredHome;
+		OffHome = (GoalsScoredHome/MatchesPlayedHome) / LigueAvgGoalsScoredHome;
 	}
 
-	public Float calculateOffAway(){
+	public void calculateOffAway(){
 		if(MatchesPlayedAway == 0) {
-			return	OffAway = 0f;
+			OffAway = 0f;
 		}
-		return OffAway = (GoalsScoredAway/MatchesPlayedAway) / LigueAvgGoalsScoredAway;
+		OffAway = (GoalsScoredAway/MatchesPlayedAway) / LigueAvgGoalsScoredAway;
 	}
 
-	public Float calculateDeffHome(){
+	public void calculateDeffHome(){
 		if(MatchesPlayedHome == 0) {
-			return	DeffHome = 0f;
+			DeffHome = 0f;
 		}
-		return DeffHome = (GoalsLostHome/MatchesPlayedHome) / LigueAvgGoalsLostHome;
+		DeffHome = (GoalsLostHome/MatchesPlayedHome) / LigueAvgGoalsLostHome;
 	}
 
-	public Float calculateDeffAway(){
+	public void calculateDeffAway(){
 		if(MatchesPlayedAway == 0) {
-			return	DeffAway = 0f;
+			DeffAway = 0f;
 		}
-		return DeffAway = (GoalsLostAway/MatchesPlayedAway) / LigueAvgGoalsLostAway;
+		DeffAway = (GoalsLostAway/MatchesPlayedAway) / LigueAvgGoalsLostAway;
 	}
 
 

@@ -74,7 +74,10 @@ private TableLiveRepository tableLiveRepository;
 		    tl.setLigueAvgGoalsScoredAway(ligueAvgGoalScoredAway);
 		    tl.setLigueAvgGoalsLostHome(ligueAvgGoalLostHome);
 		    tl.setLigueAvgGoalsLostAway(ligueAvgGoalLostAway);
-
+			tl.calculateOffHome();
+			tl.calculateOffAway();
+			tl.calculateDeffHome();
+			tl.calculateDeffHome();
 
 		    System.out.println(tl.toString());
 
