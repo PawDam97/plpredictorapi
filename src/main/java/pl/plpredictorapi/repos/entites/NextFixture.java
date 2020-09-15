@@ -16,8 +16,8 @@ public class NextFixture {
     private String HomeTeam;
     private String AwayTeam;
     private String Date;
-    private String HalftimeResult;
-    private String Result;
+    private Integer HomeTeamId;
+    private Integer AwayTeamId;
 
     public NextFixture(){}
 
@@ -41,18 +41,18 @@ public class NextFixture {
 
     public void setDate(String date) { Date = date; }
 
-    public String getHalftimeResult() { return HalftimeResult; }
+    public Integer getHomeTeamId() { return HomeTeamId; }
 
-    public void setHalftimeResult(String halftimeResult) { HalftimeResult = halftimeResult; }
+    public void setHomeTeamId(Integer homeTeamId) { HomeTeamId = homeTeamId; }
 
-    public String getResult() { return Result; }
+    public Integer getAwayTeamId() { return AwayTeamId; }
 
-    public void setResult(String result) { Result = result; }
+    public void setAwayTeamId(Integer awayTeamId) { AwayTeamId = awayTeamId; }
 
     @Override
     public String toString() {
         return "[ id: " + String.valueOf(Id) + ", round_number: " + String.valueOf(RoundNumber)  + ", home_team: " + HomeTeam +
-                ", away_team: " + AwayTeam + ", date: " + Date +", halftime_result: " + HalftimeResult +
-                ", result: " + Result +"]";
+                ", away_team: " + AwayTeam + ", date: " + Date +", home_team_id: " + String.valueOf(HomeTeamId) +
+                ", away_team_id: " + String.valueOf(AwayTeamId) +"]";
     }
 }

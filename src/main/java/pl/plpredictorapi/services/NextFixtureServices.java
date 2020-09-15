@@ -48,13 +48,13 @@ public class NextFixtureServices {
             } else {
                 tl = new NextFixture();
             }
-            tl.setId(fixtures.getFixtureId());
+
             tl.setRoundNumber(fixtures.getRound());
             tl.setHomeTeam(fixtures.getHomeTeam().getTeamName());
             tl.setAwayTeam(fixtures.getAwayTeam().getTeamName());
             tl.setDate(fixtures.getEventDate());
-            tl.setHalftimeResult(fixtures.getScore().getHalftime());
-            tl.setResult(fixtures.getScore().getFulltime());
+            tl.setHomeTeamId(fixtures.getHomeTeam().getTeamId());
+            tl.setAwayTeamId(fixtures.getAwayTeam().getTeamId());
             nextFixtureRepository.save(tl);
         }
     }

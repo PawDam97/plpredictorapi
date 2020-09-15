@@ -77,7 +77,7 @@ private TableLiveRepository tableLiveRepository;
 			tl.calculateOffHome();
 			tl.calculateOffAway();
 			tl.calculateDeffHome();
-			tl.calculateDeffHome();
+			tl.calculateDeffAway();
 
 		    System.out.println(tl.toString());
 
@@ -97,6 +97,7 @@ private TableLiveRepository tableLiveRepository;
 	    */
 
     }
+
 
     private Float getLigueAvgGoalsScoredHome(List<Standing> standings){
     	Float allgoals = 0f;

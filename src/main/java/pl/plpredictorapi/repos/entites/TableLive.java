@@ -48,20 +48,23 @@ public class TableLive {
 		if(MatchesPlayedHome == 0) { //poniewaz nie można dzielić przez 0
 			OffHome = 0f;
 		}
-		OffHome = (GoalsScoredHome/MatchesPlayedHome) / LigueAvgGoalsScoredHome;
+		else
+			OffHome = (GoalsScoredHome/MatchesPlayedHome) / LigueAvgGoalsScoredHome;
 	}
 
 	public void calculateOffAway(){
 		if(MatchesPlayedAway == 0) {
 			OffAway = 0f;
 		}
-		OffAway = (GoalsScoredAway/MatchesPlayedAway) / LigueAvgGoalsScoredAway;
+		else
+			OffAway = (GoalsScoredAway/MatchesPlayedAway) / LigueAvgGoalsScoredAway;
 	}
 
 	public void calculateDeffHome(){
 		if(MatchesPlayedHome == 0) {
 			DeffHome = 0f;
 		}
+		else
 		DeffHome = (GoalsLostHome/MatchesPlayedHome) / LigueAvgGoalsLostHome;
 	}
 
@@ -69,7 +72,9 @@ public class TableLive {
 		if(MatchesPlayedAway == 0) {
 			DeffAway = 0f;
 		}
+		else
 		DeffAway = (GoalsLostAway/MatchesPlayedAway) / LigueAvgGoalsLostAway;
+
 	}
 
 
