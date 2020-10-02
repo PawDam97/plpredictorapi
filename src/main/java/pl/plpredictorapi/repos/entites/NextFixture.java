@@ -15,7 +15,7 @@ public class NextFixture {
     private String RoundNumber;
     private String HomeTeam;
     private String AwayTeam;
-    private String Date;
+    private String date;
     private Integer HomeTeamId;
     private Integer AwayTeamId;
 
@@ -37,9 +37,9 @@ public class NextFixture {
 
     public void setAwayTeam(String awayTeam) { AwayTeam = awayTeam; }
 
-    public String getDate() { return Date; }
+    public String getDate() { return date; }
 
-    public void setDate(String date) { Date = date; }
+    public void setDate(String date) { this.date = date; }
 
     public Integer getHomeTeamId() { return HomeTeamId; }
 
@@ -52,7 +52,7 @@ public class NextFixture {
     @Override
     public String toString() {
         return "[ id: " + String.valueOf(Id) + ", round_number: " + String.valueOf(RoundNumber)  + ", home_team: " + HomeTeam +
-                ", away_team: " + AwayTeam + ", date: " + Date +", home_team_id: " + String.valueOf(HomeTeamId) +
+                ", away_team: " + AwayTeam + ", date: " + date +", home_team_id: " + String.valueOf(HomeTeamId) +
                 ", away_team_id: " + String.valueOf(AwayTeamId) +"]";
     }
 }

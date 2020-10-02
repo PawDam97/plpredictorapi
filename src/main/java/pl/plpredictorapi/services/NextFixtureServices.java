@@ -1,5 +1,6 @@
 package pl.plpredictorapi.services;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -20,7 +21,7 @@ public class NextFixtureServices {
     public NextFixtureServices(NextFixtureRepository nextFixtureRepository) { this.nextFixtureRepository = nextFixtureRepository; }
 
     public Iterable<NextFixture> list() {
-        return nextFixtureRepository.findAll();
+        return nextFixtureRepository.findAll(Sort.by("date"));
     }
 
     public Iterable<NextFixture> save(List<NextFixture> nextFixtureList) {

@@ -15,7 +15,7 @@ public class LastFixture {
     private String RoundNumber;
     private String HomeTeam;
     private String AwayTeam;
-    private String Date;
+    private String date;
     private String Halftime;
     private String Fulltime;
     public LastFixture(){}
@@ -53,11 +53,11 @@ public class LastFixture {
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 
     public String getHalftime() {
@@ -78,7 +78,7 @@ public class LastFixture {
     @Override
     public String toString() {
         return "[ id: " + String.valueOf(Id) + ", round_number: " + String.valueOf(RoundNumber)  + ", home_team: " + HomeTeam +
-                ", away_team: " + AwayTeam + ", date: " + Date +", halftime: " + Halftime+
+                ", away_team: " + AwayTeam + ", date: " + date +", halftime: " + Halftime+
                 ", fulltime: " + Fulltime +"]";
     }
 }

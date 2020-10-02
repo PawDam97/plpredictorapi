@@ -1,5 +1,6 @@
 package pl.plpredictorapi.services;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -18,7 +19,7 @@ public class LastFixtureServices {
     private LastFixtureRepository lastFixtureRepository;
     public LastFixtureServices(LastFixtureRepository lastFixtureRepository) { this.lastFixtureRepository = lastFixtureRepository; }
     public Iterable<LastFixture> list() {
-        return lastFixtureRepository.findAll();
+        return lastFixtureRepository.findAll(Sort.by("date"));
     }
     public Iterable<LastFixture> save(List<LastFixture> lastFixtureList) {
         return lastFixtureRepository.saveAll(lastFixtureList);
@@ -30,7 +31,7 @@ public class LastFixtureServices {
         httpHeaders.add("x-rapidapi-key", "ad53fe4823msh08e98e190c82629p19577djsn5a6af4d40f2c");
         HttpEntity<String> entity = new HttpEntity<>("body", httpHeaders);
         ResponseEntity<LastFixturesTable> exchange =
-                template.exchange("https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2790/last/10", HttpMethod.GET, entity,
+                template.exchange("https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2790/last/50", HttpMethod.GET, entity,
                         LastFixturesTable.class);
         List<Fixture> fixtureTable = exchange.getBody().getApi().getFixtures();
 
@@ -48,6 +49,7 @@ public class LastFixtureServices {
             tl.setDate(fixtures.getEventDate());
             tl.setHalftime(fixtures.getScore().getHalftime());
             tl.setFulltime(fixtures.getScore().getFulltime());
+            lastFixtureRepository.save(tl);
         }
     }
 }

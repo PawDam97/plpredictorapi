@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
-import java.net.http.HttpResponse;
 
 
 @Entity
@@ -14,8 +13,8 @@ public class TableLive {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer Id;
-	private Integer ApiId;
-    private Integer Position;
+	private Integer apiId;
+    private Integer position;
     private String ClubName;
     private Float Wins;
     private Float Draws;
@@ -78,9 +77,9 @@ public class TableLive {
 	}
 
 
-	public Integer getApiId() { return ApiId; }
+	public Integer getApiId() { return apiId; }
 
-	public void setApiId(Integer apiId) { ApiId = apiId; }
+	public void setApiId(Integer apiId) { this.apiId = apiId; }
 
 	public Float getMatchesPlayedHome() { return MatchesPlayedHome; }
 
@@ -99,11 +98,11 @@ public class TableLive {
 	}
 
 	public Integer getPosition() {
-		return Position;
+		return position;
 	}
 
 	public void setPosition(Integer position) {
-		Position = position;
+		this.position = position;
 	}
 
 	public String getClubName() {
@@ -264,8 +263,8 @@ public class TableLive {
 	public String toString() {
 		return "TableLive{" +
 				"Id=" + Id +
-				", ApiId=" + ApiId +
-				", Position=" + Position +
+				", ApiId=" + apiId +
+				", Position=" + position +
 				", ClubName='" + ClubName + '\'' +
 				", Wins=" + Wins +
 				", Draws=" + Draws +
