@@ -18,6 +18,7 @@ public class LastFixture {
     private String date;
     private String Halftime;
     private String Fulltime;
+    private Integer fixtureId;
     public LastFixture(){}
 
     public Integer getId() {
@@ -75,10 +76,19 @@ public class LastFixture {
     public void setFulltime(String fulltime) {
         Fulltime = fulltime;
     }
+
+    public Integer getFixtureId() {
+        return fixtureId;
+    }
+
+    public void setFixtureId(Integer fixtureId) {
+        this.fixtureId = fixtureId;
+    }
+
     @Override
     public String toString() {
         return "[ id: " + String.valueOf(Id) + ", round_number: " + String.valueOf(RoundNumber)  + ", home_team: " + HomeTeam +
                 ", away_team: " + AwayTeam + ", date: " + date +", halftime: " + Halftime+
-                ", fulltime: " + Fulltime +"]";
+                ", fulltime: " + Fulltime +", fixture_id: " + String.valueOf(fixtureId) +"]";
     }
 }

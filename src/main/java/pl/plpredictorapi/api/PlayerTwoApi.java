@@ -15,4 +15,5 @@ public class PlayerTwoApi {
     public List<PlayerStatsTwo> list(){
         return services.listAll();
     }
+
 }

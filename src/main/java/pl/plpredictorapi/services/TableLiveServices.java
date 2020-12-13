@@ -85,19 +85,6 @@ private TableLiveRepository tableLiveRepository;
 
 		    tableLiveRepository.save(tl);
 	    }
-
-
-
-	    /*
-	    Takim zapytaniem wyświetlisz w konsoli całego jsona którego możesz wkleić w http://www.jsonschema2pojo.org/
-	    żeby wygenerował ci klasy na które ci to zmapuje
-
-	    ResponseEntity<String> exchange =
-			    template.exchange("https://api-football-v1.p.rapidapi.com/v2/leagueTable/524", HttpMethod.GET, entity,
-					    String.class);
-	    System.out.println("AAAA "+exchange.getBody());
-	    */
-
     }
 
 

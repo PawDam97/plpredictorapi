@@ -18,6 +18,7 @@ public class NextFixture {
     private String date;
     private Integer HomeTeamId;
     private Integer AwayTeamId;
+    private Integer fixtureId;
 
     public NextFixture(){}
 
@@ -49,10 +50,18 @@ public class NextFixture {
 
     public void setAwayTeamId(Integer awayTeamId) { AwayTeamId = awayTeamId; }
 
+    public Integer getFixtureId() {
+        return fixtureId;
+    }
+
+    public void setFixtureId(Integer fixtureId) {
+        this.fixtureId = fixtureId;
+    }
+
     @Override
     public String toString() {
         return "[ id: " + String.valueOf(Id) + ", round_number: " + String.valueOf(RoundNumber)  + ", home_team: " + HomeTeam +
                 ", away_team: " + AwayTeam + ", date: " + date +", home_team_id: " + String.valueOf(HomeTeamId) +
-                ", away_team_id: " + String.valueOf(AwayTeamId) +"]";
+                ", away_team_id: " + String.valueOf(AwayTeamId) +", fixture_id: " + String.valueOf(fixtureId) +"]";
     }
 }

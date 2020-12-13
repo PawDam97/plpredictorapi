@@ -1,9 +1,11 @@
 package pl.plpredictorapi.repos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import org.springframework.stereotype.Repository;
-import pl.plpredictorapi.repos.entites.TeamStrength;
+import pl.plpredictorapi.repos.entites.Weights;
+
 
 @Repository
-public interface TeamStrengthRepository extends JpaRepository<TeamStrength,Integer> {
+public interface WeightsRepository extends JpaRepository<Weights,Integer> {
 }

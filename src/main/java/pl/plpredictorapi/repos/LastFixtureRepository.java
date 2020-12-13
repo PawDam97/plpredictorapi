@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface LastFixtureRepository extends JpaRepository<LastFixture,Integer> {
-    @Query("SELECT t FROM LastFixture t WHERE t.HomeTeam = :name")
-    List<LastFixture> getByName(@Param("name") String name);
+    @Query("SELECT t FROM LastFixture t WHERE t.fixtureId = :fixture_id")
+    List<LastFixture> getByFixtureId(@Param("fixture_id") Integer fixtureId);
 }

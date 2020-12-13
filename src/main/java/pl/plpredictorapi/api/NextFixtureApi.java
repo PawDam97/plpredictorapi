@@ -24,4 +24,9 @@ public class NextFixtureApi {
     public void saveNextFixture(){
         nextFixtureServices.saveNextFixture();
     }
+
+    @GetMapping("/delete")
+    public void deleteNextFixtures(){
+        nextFixtureServices.delete();
+    }
 }

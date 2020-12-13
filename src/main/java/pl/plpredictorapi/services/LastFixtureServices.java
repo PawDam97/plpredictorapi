@@ -19,11 +19,15 @@ public class LastFixtureServices {
     private LastFixtureRepository lastFixtureRepository;
     public LastFixtureServices(LastFixtureRepository lastFixtureRepository) { this.lastFixtureRepository = lastFixtureRepository; }
     public Iterable<LastFixture> list() {
-        return lastFixtureRepository.findAll(Sort.by("date"));
+        return lastFixtureRepository.findAll(Sort.by(Sort.Direction.DESC,"date"));
     }
     public Iterable<LastFixture> save(List<LastFixture> lastFixtureList) {
         return lastFixtureRepository.saveAll(lastFixtureList);
     }
+    public void delete(){
+        lastFixtureRepository.deleteAll();
+    }
+
     public void saveLastFixture() {
         RestTemplate template = new RestTemplate();
         HttpHeaders httpHeaders = new HttpHeaders();
@@ -37,7 +41,7 @@ public class LastFixtureServices {
 
         for (Fixture fixtures : fixtureTable) {
             LastFixture tl;
-            List<LastFixture> existing = lastFixtureRepository.getByName(fixtures.getHomeTeam().getTeamName());
+            List<LastFixture> existing = lastFixtureRepository.getByFixtureId(fixtures.getFixtureId());
             if (!existing.isEmpty()) {
                 tl = existing.get(0);
             } else {
@@ -49,6 +53,7 @@ public class LastFixtureServices {
             tl.setDate(fixtures.getEventDate());
             tl.setHalftime(fixtures.getScore().getHalftime());
             tl.setFulltime(fixtures.getScore().getFulltime());
+            tl.setFixtureId(fixtures.getFixtureId());
             lastFixtureRepository.save(tl);
         }
     }

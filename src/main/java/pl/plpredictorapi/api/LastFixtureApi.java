@@ -24,4 +24,9 @@ public class LastFixtureApi {
     public void saveLastFixture(){
         lastFixtureServices.saveLastFixture();
     }
+
+    @GetMapping("/delete")
+    public void deleteLastFixtures(){
+        lastFixtureServices.delete();
+    }
 }
