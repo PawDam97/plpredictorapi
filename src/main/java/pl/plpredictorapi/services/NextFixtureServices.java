@@ -52,7 +52,6 @@ public class NextFixtureServices {
             } else {
                 tl = new NextFixture();
             }
-
             tl.setRoundNumber(fixtures.getRound());
             tl.setHomeTeam(fixtures.getHomeTeam().getTeamName());
             tl.setAwayTeam(fixtures.getAwayTeam().getTeamName());

@@ -1,46 +1,29 @@
 package pl.plpredictorapi.api;
 
-import org.hamcrest.Matchers;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import pl.plpredictorapi.repos.entites.Weights;
 import pl.plpredictorapi.services.WeightsServices;
-
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(MockitoExtension.class)
 class WeightsApiTest {
-    @Autowired
-    private MockMvc mockMvc;
-    @MockBean
+
+    @Mock
     private WeightsServices weightsServices;
-    @MockBean
-    private WeightsApi weightsApi;
-
-
+    @InjectMocks
+    private WeightsApi api;
 
 
     @Test
-   public void testWeightsById() throws Exception{
+    public void testWeightsById() throws Exception{
+        MockitoAnnotations.initMocks(this);
         Weights weights = new Weights();
         weights.setWeightsId(1);
         weights.setS2015_16((float) 1.1);
@@ -50,8 +33,7 @@ class WeightsApiTest {
         weights.setS2019_20((float) 1.8);
         weights.setS2020_21((float) 1);
         when(weightsServices.getById(anyInt())).thenReturn(weights);
-        mockMvc.perform(MockMvcRequestBuilders.get("/Weights/1"))
-                .andExpect(jsonPath("$.weightsId", Matchers.is("1")))
-                .andExpect((status().isOk()));
+        Weights actual = api.get(1);
+        assertEquals(1f, actual.getS2020_21(),0f);
     }
 }

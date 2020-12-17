@@ -55,7 +55,6 @@ private TableLiveRepository tableLiveRepository;
 		    }else{
 		    	tl = new TableLive();
 		    }
-
 			tl.setApiId(standing.getTeamId());
 		    tl.setClubName(standing.getTeamName());
 		    tl.setPosition(standing.getRank());
@@ -82,7 +81,6 @@ private TableLiveRepository tableLiveRepository;
 			tl.calculateDeffHome();
 			tl.calculateDeffAway();
 		    System.out.println(tl.toString());
-
 		    tableLiveRepository.save(tl);
 	    }
     }

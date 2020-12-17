@@ -1,19 +1,15 @@
 package pl.plpredictorapi.repos.entites;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
 @Table(name = "table2020_21")
 public class TableLive {
-    @javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+	@javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
-	private Integer apiId;
     private Integer position;
     private String ClubName;
     private Float Wins;
@@ -30,7 +26,7 @@ public class TableLive {
     private String League;
 	private Float MatchesPlayedHome;
 	private Float MatchesPlayedAway;
-
+	private Integer apiId;
 	private Float LigueAvgGoalsScoredHome;
 	private Float LigueAvgGoalsScoredAway;
 	private Float LigueAvgGoalsLostHome;

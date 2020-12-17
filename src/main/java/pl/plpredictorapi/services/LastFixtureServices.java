@@ -11,6 +11,7 @@ import pl.plpredictorapi.jsons.lastfixtures.LastFixturesTable;
 import pl.plpredictorapi.jsons.nextfixtures.Fixture;
 import pl.plpredictorapi.repos.LastFixtureRepository;
 import pl.plpredictorapi.repos.entites.LastFixture;
+import pl.plpredictorapi.repos.entites.TeamsStrengths;
 
 import java.util.List;
 
@@ -23,6 +24,9 @@ public class LastFixtureServices {
     }
     public Iterable<LastFixture> save(List<LastFixture> lastFixtureList) {
         return lastFixtureRepository.saveAll(lastFixtureList);
+    }
+    public LastFixture get(Integer fixtureId){
+        return  lastFixtureRepository.findById(fixtureId).get();
     }
     public void delete(){
         lastFixtureRepository.deleteAll();

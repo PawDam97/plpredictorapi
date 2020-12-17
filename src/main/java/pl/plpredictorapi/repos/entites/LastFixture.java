@@ -8,7 +8,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "last_fixture")
 public class LastFixture {
-
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;

@@ -14,6 +14,4 @@ public interface TableLiveRepository extends JpaRepository<TableLive,Integer> {
 	public List<TableLive> findByApiId(Integer apiId);
 	@Query("SELECT t FROM TableLive t WHERE t.ClubName = :name")
 	List<TableLive> getByName(@Param("name") String name);
-
-
 }
