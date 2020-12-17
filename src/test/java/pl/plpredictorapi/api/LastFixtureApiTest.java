@@ -17,6 +17,8 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -36,10 +38,9 @@ class LastFixtureApiTest {
 
     @Test
     void deleteLastFixtures() {
-        List<LastFixture> lastFixtureList = new ArrayList<>();
-        LastFixture lastFixture = new LastFixture();
-        lastFixtureList.add(lastFixture);
-        services.delete();
+	    api.deleteLastFixtures();
+	    verify(services, atLeastOnce()).delete();
+
     }
     @Test
     public void getLastFixtureById() throws Exception{
