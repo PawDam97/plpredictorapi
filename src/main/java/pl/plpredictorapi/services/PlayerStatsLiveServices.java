@@ -31,7 +31,7 @@ public class PlayerStatsLiveServices {
         RestTemplate template = new RestTemplate();
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("x-rapidapi-host", "api-football-v1.p.rapidapi.com");
-        httpHeaders.add("x-rapidapi-key", "ad53fe4823msh08e98e190c82629p19577djsn5a6af4d40f2c");
+        httpHeaders.add("x-rapidapi-key", "key");
         HttpEntity<String> entity = new HttpEntity<>("body", httpHeaders);
         ResponseEntity<PlayerStatsTable> exchange =
                 template.exchange("https://api-football-v1.p.rapidapi.com/v2/topscorers/2790", HttpMethod.GET, entity,
