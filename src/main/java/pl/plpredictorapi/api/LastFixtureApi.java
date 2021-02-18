@@ -5,9 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.plpredictorapi.repos.entites.LastFixture;
-import pl.plpredictorapi.repos.entites.TableLive;
-import pl.plpredictorapi.repos.entites.TeamsStrengths;
+import pl.plpredictorapi.entites.LastFixture;
 import pl.plpredictorapi.services.LastFixtureServices;
 
 @RestController

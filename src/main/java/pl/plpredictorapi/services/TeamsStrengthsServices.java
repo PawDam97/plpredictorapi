@@ -3,7 +3,7 @@ package pl.plpredictorapi.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.plpredictorapi.repos.TeamsStrengthsRepository;
-import pl.plpredictorapi.repos.entites.TeamsStrengths;
+import pl.plpredictorapi.entites.TeamsStrengths;
 
 import java.util.List;
 

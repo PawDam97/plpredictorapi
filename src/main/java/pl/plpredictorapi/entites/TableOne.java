@@ -1,12 +1,10 @@
-package pl.plpredictorapi.repos.entites;
-
+package pl.plpredictorapi.entites;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "table2017_18")
-public class TableThree {
-
+@Table(name = "table2015_16")
+public class TableOne {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
@@ -27,11 +25,11 @@ public class TableThree {
     private Float Points;
     private String League;
 
-    public TableThree(){
+    public TableOne(){
 
     }
 
-    public TableThree(Integer id,Integer position, String clubName, Float wins, Float draws, Float losses, Float goalsScored, Float goalsLost, Float goalsDifference, Float goalsScoredHome, Float goalsLostHome, Float goalsScoredAway, Float goalsLostAway, Float yellowCards, Float redCards, Float points, String league) {
+    public TableOne(Integer id,Integer position, String clubName, Float wins, Float draws, Float losses, Float goalsScored, Float goalsLost, Float goalsDifference, Float goalsScoredHome, Float goalsLostHome, Float goalsScoredAway, Float goalsLostAway, Float yellowCards, Float redCards, Float points, String league) {
         this.Id = id;
         this.Position = position;
         this.ClubName = clubName;

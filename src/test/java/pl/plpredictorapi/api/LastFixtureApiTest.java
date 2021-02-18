@@ -6,16 +6,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.plpredictorapi.repos.entites.LastFixture;
-import pl.plpredictorapi.repos.entites.Weights;
+import pl.plpredictorapi.entites.LastFixture;
 import pl.plpredictorapi.services.LastFixtureServices;
-import pl.plpredictorapi.services.WeightsServices;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;

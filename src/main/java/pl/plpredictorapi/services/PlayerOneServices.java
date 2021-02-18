@@ -3,8 +3,7 @@ package pl.plpredictorapi.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.plpredictorapi.repos.PlayerOneRepository;
-import pl.plpredictorapi.repos.entites.PlayerStatsOne;
-import pl.plpredictorapi.repos.entites.TableOne;
+import pl.plpredictorapi.entites.PlayerStatsOne;
 
 import java.util.List;
 

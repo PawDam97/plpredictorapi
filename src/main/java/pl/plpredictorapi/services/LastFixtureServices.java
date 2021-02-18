@@ -10,8 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import pl.plpredictorapi.jsons.lastfixtures.LastFixturesTable;
 import pl.plpredictorapi.jsons.nextfixtures.Fixture;
 import pl.plpredictorapi.repos.LastFixtureRepository;
-import pl.plpredictorapi.repos.entites.LastFixture;
-import pl.plpredictorapi.repos.entites.TeamsStrengths;
+import pl.plpredictorapi.entites.LastFixture;
 
 import java.util.List;
 

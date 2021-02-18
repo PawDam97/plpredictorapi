@@ -1,4 +1,4 @@
-package pl.plpredictorapi.repos.entites;
+package pl.plpredictorapi.entites;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

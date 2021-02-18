@@ -6,7 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.plpredictorapi.repos.entites.Weights;
+import pl.plpredictorapi.entites.Weights;
 import pl.plpredictorapi.services.WeightsServices;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.anyInt;

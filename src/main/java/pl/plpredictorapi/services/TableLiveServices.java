@@ -12,8 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import pl.plpredictorapi.jsons.PremieshipTable;
 import pl.plpredictorapi.jsons.Standing;
 import pl.plpredictorapi.repos.TableLiveRepository;
-import pl.plpredictorapi.repos.entites.TableLive;
-import pl.plpredictorapi.repos.entites.TeamsStrengths;
+import pl.plpredictorapi.entites.TableLive;
 
 @Service
 public class TableLiveServices {

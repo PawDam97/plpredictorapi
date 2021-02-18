@@ -6,13 +6,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.plpredictorapi.repos.entites.PlayerStatsOne;
-import pl.plpredictorapi.repos.entites.Weights;
+import pl.plpredictorapi.entites.PlayerStatsOne;
 import pl.plpredictorapi.services.PlayerOneServices;
 
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
@@ -39,11 +37,7 @@ class PlayerOneApiTest {
         playerStatsOne.setSurname("Testowo");
         playerStatsOne.setYellowCards(7);
         when(playerOneServices.get(anyInt())).thenReturn(playerStatsOne);
-
-
         PlayerStatsOne actual = api.get(1);
-
-
         assertEquals(8, actual.getGoals(),0f);
     }
 }

@@ -3,7 +3,7 @@ package pl.plpredictorapi.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.plpredictorapi.repos.PlayerThreeRepository;
-import pl.plpredictorapi.repos.entites.PlayerStatsThree;
+import pl.plpredictorapi.entites.PlayerStatsThree;
 
 import java.util.List;
 @Service

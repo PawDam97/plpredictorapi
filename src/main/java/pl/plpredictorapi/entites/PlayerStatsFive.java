@@ -1,11 +1,10 @@
-package pl.plpredictorapi.repos.entites;
+package pl.plpredictorapi.entites;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "playerstats2017_18")
-public class PlayerStatsThree {
-
+@Table(name = "playerstats2019_20")
+public class PlayerStatsFive {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer PlayerId;
@@ -20,7 +19,7 @@ public class PlayerStatsThree {
     private Integer CleanSheets;
     private String League;
 
-    public PlayerStatsThree(){
+    public PlayerStatsFive(){
     }
 
     public Integer getPlayerId() {

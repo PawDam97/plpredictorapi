@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import pl.plpredictorapi.jsons.nextfixtures.Fixture;
 import pl.plpredictorapi.jsons.nextfixtures.NextFixturesTable;
 import pl.plpredictorapi.repos.NextFixtureRepository;
-import pl.plpredictorapi.repos.entites.NextFixture;
+import pl.plpredictorapi.entites.NextFixture;
 
 
 @Service

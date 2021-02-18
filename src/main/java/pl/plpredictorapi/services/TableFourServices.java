@@ -3,7 +3,7 @@ package pl.plpredictorapi.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.plpredictorapi.repos.TableFourRepository;
-import pl.plpredictorapi.repos.entites.TableFour;
+import pl.plpredictorapi.entites.TableFour;
 
 import java.util.List;
 

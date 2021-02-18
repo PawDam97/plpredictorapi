@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import pl.plpredictorapi.repos.entites.PlayerStatsOne;
-import pl.plpredictorapi.repos.entites.Weights;
+import pl.plpredictorapi.entites.PlayerStatsOne;
 import pl.plpredictorapi.services.PlayerOneServices;
 
 import java.util.List;

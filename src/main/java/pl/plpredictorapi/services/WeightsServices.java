@@ -3,7 +3,7 @@ package pl.plpredictorapi.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.plpredictorapi.repos.WeightsRepository;
-import pl.plpredictorapi.repos.entites.Weights;
+import pl.plpredictorapi.entites.Weights;
 
 import java.util.List;
 

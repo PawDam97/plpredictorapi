@@ -7,14 +7,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import pl.plpredictorapi.jsons.nextfixtures.Fixture;
-import pl.plpredictorapi.jsons.nextfixtures.NextFixturesTable;
 import pl.plpredictorapi.jsons.playerStats.PlayerStatsTable;
 import pl.plpredictorapi.jsons.playerStats.Topscorer;
-import pl.plpredictorapi.repos.NextFixtureRepository;
 import pl.plpredictorapi.repos.PlayerStatsLiveRepository;
-import pl.plpredictorapi.repos.entites.NextFixture;
-import pl.plpredictorapi.repos.entites.PlayerStatsLive;
+import pl.plpredictorapi.entites.PlayerStatsLive;
 
 import java.util.List;
 
